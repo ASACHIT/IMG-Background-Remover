@@ -4,7 +4,9 @@ import requests
 
 from cmds import parsecmds
 
+# https://github.com/ASACHIT/background-remover.git
 arguments = parsecmds()
+
 
 # ask api key and saves creating txt file
 def ask_api_key():
