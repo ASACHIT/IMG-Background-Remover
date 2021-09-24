@@ -1,0 +1,6 @@
+env/
+__pycache__/
+apikey.txt
+*.log
+*.png
+*.jpg
