@@ -27,6 +27,7 @@ def print_error(error):
 def save_image(filename, image):
     with open(filename, "wb") as out:
         out.write(image)
+        print(f"✔ Image saved successfully with filename {filename}😉")
 
 
 class Remove_background:
