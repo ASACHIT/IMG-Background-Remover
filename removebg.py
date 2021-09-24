@@ -5,45 +5,55 @@ import requests
 from cmds import parsecmds
 
 # https://github.com/ASACHIT/background-remover.git
+
 arguments = parsecmds()
 
 
-# ask api key and saves creating txt file
-def ask_api_key():
-    with open("apikey.txt", "w") as f:
-        f.write(input("🤦No api key saved found, Input Key: ").strip())
-        print("Api key saved successfully ✅,Restart the Program 🌟 ")
-        exit()
+class Api_stuff:
+    @staticmethod
+    def save_api_key() -> None:
+        with open("apikey.txt", "w") as f:
+            f.write(input("🤦No api key saved found, Input Key: ").strip())
+            print("Api key saved successfully ✅,Restart the Program 🌟 ")
+            exit()
+
+    @staticmethod
+    def read_stored_Api():
+        try:
+            with open("apikey.txt", "r") as f:
+                key = f.read()
+                return key
+        except FileNotFoundError:
+            raise FileNotFoundError
 
 
-def print_error(error):
-    json_response = json.loads(error)
-    error_detail_dict = json_response["errors"][0]
-    got_an_error = f"""
-        Error: {error_detail_dict.get('title')}
-        Reason: {error_detail_dict.get('code')}
-        Detail: {error_detail_dict.get('detail')}"""
-    print(got_an_error)
+class Other_stuff:
+    @staticmethod
+    def save_image(filename, image) -> None:
+        with open(filename, "wb") as out:
+            out.write(image)
+            print(f"✔ Image saved successfully with filename {filename}😉")
 
-
-def save_image(filename, image):
-    with open(filename, "wb") as out:
-        out.write(image)
-        print(f"✔ Image saved successfully with filename {filename}😉")
+    @staticmethod
+    def print_error(error) -> None:
+        json_response = json.loads(error)
+        error_detail_dict = json_response["errors"][0]
+        got_an_error = f"""
+            Error: {error_detail_dict.get('title')}
+            Reason: {error_detail_dict.get('code')}
+            Detail: {error_detail_dict.get('detail')}"""
+        print(got_an_error)
 
 
 class Remove_background:
-    def __init__(self) -> None:
+    def __init__(self):
         try:
-            with open("apikey.txt", "r") as f:
-                self.key = f.read()
-                if self.key == "":
-                    ask_api_key()
+            self.key = Api_stuff().read_stored_Api()
         except FileNotFoundError:
-            ask_api_key()
+            Api_stuff().save_api_key()
 
-    def remove(self):
-        if (arguments.img).startswith("htt"):
+    def remove(self) -> None:
+        if (arguments.img).startswith("http"):
 
             response = requests.post(
                 "https://api.remove.bg/v1.0/removebg",
@@ -60,9 +70,9 @@ class Remove_background:
                 headers={"X-Api-Key": self.key},
             )
             if response.status_code == requests.codes.ok:
-                save_image(arguments.filename, response.content)
+                Other_stuff().save_image(arguments.filename, response.content)
             else:
-                print_error(response.text)
+                Other_stuff().print_error(response.text)
 
         else:
             response = requests.post(
@@ -80,9 +90,9 @@ class Remove_background:
                 headers={"X-Api-Key": self.key},
             )
             if response.status_code == requests.codes.ok:
-                save_image(arguments.filename, response.content)
+                Other_stuff().save_image(arguments.filename, response.content)
             else:
-                print_error(response.text)
+                Other_stuff().print_error(response.text)
 
 
 if __name__ == "__main__":
