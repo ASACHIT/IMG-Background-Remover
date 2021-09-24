@@ -29,13 +29,13 @@ Install Background Remover
   
 ## Features
 
-- Removes background just with 1 command in 1 second
-- Supports both IMAGE File and Direct Image Url
+- In a couple seconds, removes the background with just one command.
+- Both IMAGE FILE and DIRECT IMAGE URI are supported.
 - user can define output format
-- user can define resolution of image they want
-- Background color, image can be masked
+- user can provide image resolution
+- Background color, image can be masked 
 - Output image Can be Cropped
 - Cross platform
-- Everything can be done just with simple commands 😉😜
+- Everything can be done with just a few commands 😉😜
   
 Found a bug ? or got an error? okay Feel Open to [open an issue](https://github.com/ASACHIT/background-remover/issues)😅 
