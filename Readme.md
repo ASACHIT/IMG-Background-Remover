@@ -39,3 +39,4 @@ Install Background Remover
 - Everything can be done with just a few commands 😉😜
   
 Found a bug ? or got an error? okay Feel Open to [open an issue](https://github.com/ASACHIT/background-remover/issues)😅 
+lol malai kehi niaaudaninw😂🤐sikaidenw pull request hanna
