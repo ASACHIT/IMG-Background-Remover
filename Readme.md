@@ -12,8 +12,8 @@ Get Api Key From [Here](https://www.remove.bg/api#remove-background), If the API
 Install Background Remover
 
 ```bash
-  git clone https://github.com/ASACHIT/background-remover.git
-  cd background-remover
+  git clone https://github.com/ASACHIT/IMG-Background-Remover.git
+  cd IMG-Background-Remover
   pip3 install -r requirements.txt
   python3 removebg.py  
 ```
