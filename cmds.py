@@ -14,7 +14,7 @@ def parsecmds():
         default="empty",
     )
     cmd_parser.add_argument(
-        "--img", type=str, help="Path of Image to Remove Bg", required=True
+        "--img", type=str, help="Path of Image or Image URL to Remove Bg", required=True
     )
     cmd_parser.add_argument(
         "--filename",
