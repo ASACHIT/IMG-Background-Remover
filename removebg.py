@@ -12,7 +12,7 @@ arguments = parsecmds()
 class Api_stuff:
     @staticmethod
     def save_api_key() -> None:
-        with open("apikey.txt", "w") as f:
+        with open(".apikey.txt", "w") as f:
             f.write(input("🤦No api key saved found, Input Key: ").strip())
             print("Api key saved successfully ✅,Restart the Program 🌟 ")
             exit()
@@ -20,7 +20,7 @@ class Api_stuff:
     @staticmethod
     def read_stored_Api():
         try:
-            with open("apikey.txt", "r") as f:
+            with open(".apikey.txt", "r") as f:
                 key = f.read()
                 return key
         except FileNotFoundError:
