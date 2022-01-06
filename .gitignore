@@ -1,6 +1,6 @@
 env/
 __pycache__/
-apikey.txt
+.apikey.txt
 *.log
 *.png
 *.jpg
