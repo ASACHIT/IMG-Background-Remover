@@ -41,6 +41,11 @@ Install Background Remover
 
 ![App Screenshot](https://i.imgur.com/NrIn2Y4.png)
 
+## small tutorial
+https://user-images.githubusercontent.com/73944456/163343102-db7c8b17-a2d0-4121-ab3f-eab99f4bbbc8.mp4
+
+
+
 ## Features
 
 - In a couple seconds, removes the background with just one command.
