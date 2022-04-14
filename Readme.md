@@ -1,7 +1,7 @@
 
 # Remove Background
 
-### A command-line tool that can remove the background of an image and has a lot more options
+### A Python command-line tool for removing the background from an image, cropping, formatting, masking, adding a background image, adding colors to the background, and so on...
 
 **It uses [Remove-bg's](https://www.remove.bg/) Api**
 
