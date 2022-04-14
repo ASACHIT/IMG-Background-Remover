@@ -17,12 +17,6 @@ Install Background Remover
   pip3 install -r requirements.txt
   python3 removebg.py  
 ```
-## or
-### Run Executable Directly
-
-[Windows](https://github.com/ASACHIT/background-remover/releases/tag/v1.0-window)
-
-[Linux](https://github.com/ASACHIT/background-remover/releases/tag/v1.0)
 
 ## All Input Flags
 

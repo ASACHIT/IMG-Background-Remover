@@ -2,6 +2,9 @@ import argparse
 
 
 def parsecmds():
+    """
+    Parses the command line arguments and returns the parsed arguments
+    """
     cmd_parser = argparse.ArgumentParser(
         prog="REMOVEBG",
         description="Remove Background of Image, With A Lot More Features",
@@ -79,8 +82,8 @@ def parsecmds():
     arguments = cmd_parser.parse_args()
 
     if not arguments.setapi == "empty":
-        with open("apikey.txt", "w") as f:
+        with open(".apikey.txt", "w") as f:
             f.write(arguments.setapi)
-            print("Api key saved successfully ✅")
+        print("[bold green] API Key Stored Successfully")
 
     return arguments
